@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+#formbody{
+  margin: 35px;
+}
+.formitem {
+  margin: 15px;
+}

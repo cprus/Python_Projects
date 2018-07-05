@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Notes</title>
+        {%load staticfiles%}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="{% static 'notes/script.js' %}"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Notes</h1>
+            {%for note in notes%}
+            <div id="note">
+                <h4 id="name">{{note.name}}</h4>
+                <br>
+                <p id="content">{{note.content}}</p>
+                <a href="/delete/{{note.id}}">Delete</a
+                    <br>
+                <form action="/adddesc/{{note.id}}" method="POST">
+                    {% csrf_token %}
+                    <label for="desc">Add/Update Description:</label>
+                    <textarea id="texta" name="desc"></textarea>
+                    <input id="adddesc" type="submit" value="Add">
+                </form>
+            </div>
+            {%endfor%}
+            <div id="new">
+            <form action = "/create" method = "POST">
+            {% csrf_token %}
+            <label for="name">New Note:</label>
+            <textarea id="newtext" name="name"></textarea>
+            <input type="submit" value="Post">
+            </form>
+        </div>
+        </div>
+
+    </body>
+</html>

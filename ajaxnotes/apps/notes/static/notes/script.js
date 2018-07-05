@@ -1,0 +1,6 @@
+$('#adddesc').click(function(){
+    $.ajax({
+
+
+    })
+})

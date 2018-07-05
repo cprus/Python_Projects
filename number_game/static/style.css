@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#container {
+  margin: 0 auto;
+  text-align: center;
+}
+h1{
+  margin: 15px;
+}
+h3{
+  margin: 10px;
+}
+.wrong {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  margin: 0 auto;
+  text-align: center;
+}
+#right {
+  height: 200px;
+  width: 200px;
+  background-color: green;
+  margin: 0 auto;
+  text-align: center;
+}
